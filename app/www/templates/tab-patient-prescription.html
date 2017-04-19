@@ -1,0 +1,24 @@
+  <ion-view view-title="Prescription">
+<ion-header class="bar bar-positive bar-subheader">
+   <div class = "row">
+        <div class = "col col-30">Medicines</div>
+        <div class = "col col-40">Doses</div>
+        <div class = "col col-30" align="right">Request Quantity</div>
+</div> 
+</ion-header>
+<ion-content>
+   <br><br>
+      <ion-list show-delete="false" can-swipe="true" swipe-direction="both">
+       <ion-item class="item-remove-animate" item="appointment" ng-repeat="item in data" href="#/tab/dash/{{appointment._id}}">
+         <div class = "row">
+<div class = "col col-30">{{item.name}}</div>
+<div class = "col col-40">{{item.code}}</div>
+<div class = "col col-30" align="right">{{item.limit}}</div>
+</div>
+<ion-option-button class="button-assertive" ng-click="deleteAppt(appointment._id)">Refill</ion-option-button>
+           <ion-option-button side="right" class="button-light icon ion-trash-a"ng-click="deleteAppt(appointment._id)"></ion-option-button>
+         </ion-item>
+      </ion-list>
+</ion-content>
+
+</ion-view>

@@ -1,0 +1,39 @@
+
+<ion-view view-title="Welcome to Reception">
+  <ion-content> 
+        <label class="item item-input">
+          <span class="input-label">Firstname:</span>
+          <input type="text" ng-model="patient.firstname">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Lastname:</span>
+          <input type="text" ng-model="patient.lastname">
+        </label>
+          <label class="item item-input">
+          <span class="input-label">Phone No:</span>
+          <input type="text" ng-model="patient.number">
+        </label>
+          <label class="item item-input">
+          <span class="input-label">Email:</span>
+          <input type="email" ng-model="patient.email">
+        </label>
+          <label class="item item-input">
+          <span class="input-label">Insurance Id:</span>
+          <input type="text" ng-model="patient.insuranceid">
+        </label>
+          <button class="button button-block button-calm" ng-href="#tab-receptionist/suggest-doc" ng-click="onNewPatientClick(patient)">Continue</button>
+           </label>
+           <hr>
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon  custom-icon"></i>
+                    <input type="text" placeholder="Contact Number" ng-model="st.searchText" ng-keyup="initiateAutoSearch();">
+                </label>
+                    <div class="auto-result" ng-show="toggleAutoSearch">
+                    <ul ng-repeat="var in st.searchData" >
+                    <li ng-click="selectedSearchResult(var)">{{var.firstname}}</li>
+                    </ul>
+                    </div>
+            <button class="button button-block button-calm">Search Patient</button>
+  </ion-content>
+</ion-view>
+

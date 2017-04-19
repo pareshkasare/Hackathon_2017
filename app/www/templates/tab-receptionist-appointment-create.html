@@ -1,0 +1,27 @@
+<ion-view view-title="Create Appointment">
+  <ion-content class="padding">
+    <div class="row">
+           <div class="col col-20"><label>Title:</label></div>
+           <div><label><input type="text" ng-model="event.title"/></label></div>
+       </div>
+       <div class="row">
+           <div class="col col-20"><label>Start Date:</label></div>
+           <div><label><input type="text" ng-model="event.sDate"/></label></div>
+       </div>
+       <div class="row">
+           <div class="col col-20"><label>Start Time:</label></div>
+           <div><label><input type="text" ng-model="event.sTime"/></label></div>
+       </div>
+        <div class="row">
+           <div class="col col-20"><label>End Date:</label></div>
+           <div><label><input type="text" ng-model="event.eDate"/></label></div>
+       </div>  
+       <div class="row">
+           <div class="col col-20"><label>End Time:</label></div>
+           <div><label><input type="text" ng-model="event.eTime"/></label></div>
+       </div>
+      
+        <a class = "button button-full button-positive" ng-click="CreateEvent(event)">Create</a>      
+        <a class = "button button-full button-positive" ng-href="#/tab-receptionist/home-appointment">Cancle </a>
+  </ion-content>
+</ion-view>

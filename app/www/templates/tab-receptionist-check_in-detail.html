@@ -1,0 +1,33 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="Patient Check-In">
+  <ion-content class="padding">
+      
+				<label class="item item-input">
+                    <i class="icon ion-social-usd placeholder-icon custom-icon"></i>
+                    <input type="text" placeholder="Co-Pay amount">
+                </label>
+                <label class="item item-input">
+                    <i class="icon ion-edit placeholder-icon custom-icon"></i>
+                    <input type="text" placeholder="Patient ID">
+                </label>
+                
+                <label class="item item-input">
+                    <i class="icon ion-edit placeholder-icon custom-icon"></i>
+                    <input type="text" placeholder="Insurance Provider">
+                </label>
+                
+                <label class="item item-input">
+                    <i class="icon ion-edit placeholder-icon custom-icon"></i>
+                    <input type="text" placeholder="Insurance ID">
+                </label>
+	                        
+				<br>
+				<button align="center" class="button button-block button-positive"
+                ng-click="checkIn()">Check-In</button>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-view view-title="Dashboard">
+  
+ <ion-header class="bar bar-positive bar-subheader">
+	 
+	 <div class = "row">
+   <div align="center" class = "col col-35" >Patient</div>
+   <div align="center" class = "col col-35">Doctor</div>
+   <div align="center" class = "col col-30">Progress</div>
+   
+</div>
+		 
+ </ion-header>
+ <ion-content>
+	 <br><br>
+			<ion-list show-delete="false" can-swipe="true" swipe-direction="left">
+			 <ion-item item="appointment"
+                  ng-repeat="appointment in appointments" href="#/tab-nurse/check_in-detail/{{appointment._id}}">
+				 <div class = "row">
+      <div align="center" class = "col col-35">{{appointment.pname}}</div>
+   <div align="center" class = "col col-35">{{appointment.dname}}</div>
+	 
+   <div align="center"  class = "col col-10">
+		 <ion-icon ng-style="recep[$index]" class="icon ion-person">
+		 <ion-badge style="position:absolute; font-size:9px">Receptionist</ion-badge></ion-icon>
+	 </div>
+	 <div align="center"  class = "col col-10">
+		 <ion-icon ng-style="nurse[$index]"  class="icon ion-person">
+	 	 <ion-badge style="position:absolute; font-size:9px">Nurse</ion-badge></ion-icon>
+	</div>
+	 <div align="center" class = "col col-10">
+		 <ion-icon ng-style="doc[$index]"  class="icon ion-person">
+	 	 <ion-badge style="position:absolute; font-size:9px">Doctor</ion-badge></ion-icon>
+</div>
+   </div>
+   <ion-option-button class="button-assertive" ng-click="deleteAppt(appointment._id)">Delete</ion-option-button>
+				 </ion-item>
+			</ion-list>
+  </ion-content>
+</ion-view>

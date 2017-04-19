@@ -1,0 +1,20 @@
+
+<ion-view view-title="Patient">
+  <ion-content> 
+        <label class="item item-input">
+          <span class="input-label">Symptoms:</span>
+          <input type="text" ng-model="symptoms">
+        </label>
+
+        
+        <label class="item item-input item-select">
+            <div class="input-label">
+            Select Doctor
+            </div>
+            <select name="repeatSelect" id="repeatSelect" ng-model="selectedDoctor" ng-options="doctor.name for doctor in doctorList">
+            </select>
+        </label>
+            <a class="button button-block button-calm" ng-click="setDoctor(selectedDoctor)">Create Appointmet</a>
+  </ion-content>
+</ion-view>
+

@@ -1,0 +1,52 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="Patient Check-In">
+  <ion-content class="padding">
+				<h4>Vital Information:</h4>
+				<p>Blood Pressure: {{bp}}</p>
+				<p>Weight: {{weight}} Lbs</p>
+				<p>Oxygen Level: {{oxygen}}%</p>
+				<p>Reason to Visit: {{reason}}</p>
+
+                <label class="item item-input">
+                    <i class="icon ion-mic-a placeholder-icon  custom-icon"></i>
+                    <input type="text" placeholder="Dictation" ng-model="patient.dictation">
+                </label>
+				<br>
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon  custom-icon"></i>
+                    <input type="text" placeholder="Medicine name" ng-model="st.searchText" ng-keyup="initiateAutoSearch();">
+                </label>
+                    <div class="auto-result" ng-show="toggleAutoSearch">
+                    <ul ng-repeat="var in st.searchData.meds" >
+                    <li ng-click="selectedSearchResult1(var.name)">{{var.name}}</li>
+                    </ul>
+                    </div>
+					
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon  custom-icon"></i>
+                    <input type="text" placeholder="Medicine name" ng-model="st.searchText2" ng-keyup="initiateAutoSearch2();">
+                </label>
+                    <div class="auto-result" ng-show="toggleAutoSearch2">
+                    <ul ng-repeat="var in st.searchData.meds" >
+                    <li ng-click="selectedSearchResult2(var.name)">{{var.name}}</li>
+                    </ul>
+                    </div>
+                                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon  custom-icon"></i>
+                    <input type="text" placeholder="Medicine name" ng-model="st.searchText3" ng-keyup="initiateAutoSearch3();">
+                </label>
+                    <div class="auto-result" ng-show="toggleAutoSearch3">
+                    <ul ng-repeat="var in st.searchData.meds" >
+                    <li ng-click="selectedSearchResult3(var.name)">{{var.name}}</li>
+                    </ul>
+                    </div>
+				<br>
+				<button align="center" class="button button-round button-balanced" 
+                ng-click="checkIn()">Finish Appointment</button>
+  </ion-content>
+</ion-view>

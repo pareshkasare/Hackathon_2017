@@ -1,0 +1,17 @@
+  <ion-view view-title="Reports">
+     <ion-header class="bar bar-positive bar-subheader">
+      <div class = "row">
+          <div class = "col col-50" align="center">Date</div>
+          <div class = "col col-25" align="center">Reports</div>
+        </div>
+    </ion-header>
+<ion-content>
+  <br>
+   <br>
+    <br>
+      <div class = "row" ng-repeat="report in patientReports">
+          <div class = "col col-50" align="center"><a href="#/tab-patient/patient-report">{{report.date}}</a></div>
+          <div class = "col col-25" align="center"><a >{{report.Report}}</a></div>
+        </div>
+</ion-content>
+</ion-view>

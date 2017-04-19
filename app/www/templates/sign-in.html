@@ -1,0 +1,23 @@
+
+
+<ion-view view-title="Sign In" class="loginBg" hide-nav-bar="true" >
+<!-- <ion-nav-title><center><img src="img/logo.png" width="20"></center></ion-nav-title> -->
+  <ion-content class="padding">
+    <div class="row" align="center">
+      <div class="col col-100">
+        <img src="../img/logo.png" width="100" height="100" >
+      </div>
+    </div>
+    
+  <div class="row responsive-sm padding remvoeBP">
+	  <div class="col">			
+			<div class="list list-inset removePM">
+			  <label class="item item-input"><input type="text" ng-model="user.username" placeholder="Email Address" > </label>
+			  <label class="item item-input"><input type="password" ng-model="user.password" placeholder="Password" > </label>
+			</div>
+
+			<div class="loginButton"><button class="button ion-unlocked button-block button-positive" ng-click="signIn(user)" > Login </button>  </div>
+	  </div>
+  </div>
+    </ion-content>
+  </ion-view>

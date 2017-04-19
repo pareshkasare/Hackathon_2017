@@ -1,0 +1,30 @@
+<ion-view view-title="Event Information">
+   <ion-header-bar>
+      <h1 class = "title">Event</h1>
+   </ion-header-bar>
+	
+   <ion-content>
+       <div class="row">
+           <div class="col col-20"><label>Title:</label></div>
+           <div><label>{{eventTitle}}</label></div>
+       </div>
+       <div class="row">
+           <div class="col col-20"><label>Start Date:</label></div>
+           <div><label>{{eventStartDate}}</label></div>
+       </div>
+       <div class="row">
+           <div class="col col-20"><label>Start Time:</label></div>
+           <div><label>{{eventStartTime}}</label></div>
+       </div>
+       <div class="row">
+           <div class="col col-20"><label>End Time:</label></div>
+           <div><label>{{eventEndTime}}</label></div>
+       </div>
+       <div class="row">
+           <div class="col col-20"><label>End Date:</label></div>
+           <div><label>{{eventEndDate}}</label></div>
+       </div>  
+        <a class = "button button-full button-positive" ng-href="#/tab-receptionist/home-appointment">OK </a>      
+        <button class = "button button-full button-positive" ng-click = "DeleteEvent()">Delete </button>
+   </ion-content>
+</ion-view>

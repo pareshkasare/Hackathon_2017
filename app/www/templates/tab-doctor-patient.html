@@ -1,0 +1,19 @@
+<ion-view view-title="Patients">
+  <ion-header class="bar bar-positive bar-subheader">
+   <div class = "row">
+        <div class = "col col-70">Patient Name</div>
+        <div class = "col ">Date Attended</div>
+</div> 
+</ion-header>
+  <ion-content class="padding">
+    </br>
+    </br>
+      <div class="row" ng-repeat="patient in patientList">
+        <div class="col col-50"><a>{{patient.name}}</a></div>
+        <div class="col"><a href="#/tab-doctor/patient-info">{{patient.date}}</a></div>
+      </div>
+
+   
+
+  </ion-content>
+</ion-view>     

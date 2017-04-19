@@ -1,0 +1,43 @@
+<ion-view view-title="Patient Check-In">
+  <ion-content class="padding">
+				<label class="item item-input">
+                    <i class="icon ion-heart placeholder-icon custom-icon"></i>
+                    <input type="number" placeholder="Blood Pressure Systolic" ng-model="patient.sbp">
+                </label>
+				<label class="item item-input">
+                    <i class="icon ion-heart placeholder-icon  custom-icon2"></i>
+                    <input type="number" placeholder="Blood Pressure Diastolic" ng-model="patient.dbp">
+                </label>
+				<label class="item item-input">
+                    <i class="icon ion-battery-half placeholder-icon custom-icon"></i>
+                    <input type="number" placeholder="Oxygen Level" ng-model="patient.oxylevel">
+                </label>
+				<label class="item item-input">
+                    <i class="icon ion-leaf placeholder-icon  custom-icon2"></i>
+                    <input type="number" placeholder="Weight" ng-model="patient.weight">
+                </label>
+                <label class="item item-input">
+                    <i class="icon ion-home placeholder-icon  custom-icon"></i>
+                    <input type="number" placeholder="Room Number" ng-model="patient.roomnum">
+                </label>
+                <label class="item item-input">
+                    <i class="icon ion-home placeholder-icon  custom-icon"></i>
+                    <input type="text" placeholder="Reason/Initial input" ng-model="patient.reason">
+                </label>
+                
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon  custom-icon"></i>
+                    <input type="text" placeholder="Medicine name" ng-model="st.searchText" ng-keyup="initiateAutoSearch();">
+                </label>
+                    <div class="auto-result" ng-show="toggleAutoSearch">
+                    <ul ng-repeat="var in st.searchData" >
+                    <li ng-click="selectedSearchResult(var.firstname)">{{var.firstname}}</li>
+                    </ul>
+                    </div>
+
+                
+				<br>
+				<button align="center" class="button button-round button-balanced" 
+                ng-click="checkIn()">Check-In</button>
+  </ion-content>
+</ion-view>
