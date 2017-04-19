@@ -4,6 +4,7 @@ angular.module('starter.controllers', ['ui.calendar'])
 })
 
 .controller('DoctorCtrl', ['$scope','$http','uiCalendarConfig','$ionicModal',function($scope,$http,uiCalendarConfig,$ionicModal) {
+
 console.log("sending req to mongodb for collecting JSON object of appointments for today where nurse has been assigned to doctor");
          $scope.$on('$ionicView.enter', function(e) {
         var req = $http.post('http://127.0.0.1:8081/getappointments');
@@ -809,7 +810,7 @@ for(var i=0;i<arrayLenght;i++){
  
 })
 .controller('docAttendDetailCtrl', function($scope, $stateParams,$http,$state,$ionicHistory,autoSearchFactory2) {
-	
+
         var req = $http.post('http://127.0.0.1:8081/getappointment',{"id":$stateParams.appointmentId});
         req.success(function (data, status, headers, config) {
             console.log(JSON.stringify(data));
@@ -923,7 +924,28 @@ for(var i=0;i<arrayLenght;i++){
         });
 	}
   //$scope.appointment = appointments.get($stateParams.appointmentId);
+	    $scope.recognizedText = "";
 
+        //$scope.recognizedText = '';
+
+
+   $scope.record = function() {
+    var recognition = new webkitSpeechRecognition();
+    recognition.onresult = function(event) {
+        if (event.results.length > 0) {
+            $scope.recognizedText = event.results[0][0].transcript;
+            if($scope.patient.dictation){
+                $scope.patient.dictation = $scope.patient.dictation +", " + $scope.recognizedText;
+            }else{
+                $scope.patient.dictation = $scope.recognizedText;
+            }
+            
+            $scope.$apply()
+            console.log("text: "+$scope.recognizedText);
+        }
+    };
+    recognition.start();
+  };
 
  
 })

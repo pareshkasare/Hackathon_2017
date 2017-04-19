@@ -14,11 +14,14 @@
 
                 <label class="item item-input">
                     <i class="icon ion-mic-a placeholder-icon  custom-icon"></i>
-                    <input type="text" placeholder="Dictation" ng-model="patient.dictation">
-                </label>
-				<br>
+                    <input type="text" placeholder="Dictation" ng-model="patient.dictation" value="{{recognizedText}}">
+                </label><br>
+                <button  class="button button-round button-assertive" ng-click="record()">Record Dictation</button>
+
+				<br><br>
+
                 <label class="item item-input">
-                    <i class="icon ion-search placeholder-icon  custom-icon"></i>
+                    <i class="icon ion-search placeholder-icon custom-icon"></i>
                     <input type="text" placeholder="Medicine name" ng-model="st.searchText" ng-keyup="initiateAutoSearch();">
                 </label>
                     <div class="auto-result" ng-show="toggleAutoSearch">
@@ -36,7 +39,7 @@
                     <li ng-click="selectedSearchResult2(var.name)">{{var.name}}</li>
                     </ul>
                     </div>
-                                <label class="item item-input">
+                <label class="item item-input">
                     <i class="icon ion-search placeholder-icon  custom-icon"></i>
                     <input type="text" placeholder="Medicine name" ng-model="st.searchText3" ng-keyup="initiateAutoSearch3();">
                 </label>
@@ -46,7 +49,8 @@
                     </ul>
                     </div>
 				<br>
-				<button align="center" class="button button-round button-balanced" 
-                ng-click="checkIn()">Finish Appointment</button>
+                <div align="center">
+				<button  class="button button-round button-balanced" 
+                ng-click="checkIn()">Finish Appointment</button><div>
   </ion-content>
 </ion-view>
